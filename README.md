@@ -31,7 +31,7 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 
 Neste projeto, estou utilizando a **standalone Component Architecture** do Angular. Tem me ajudado bastante por alguns motivos:
 
-- Permite maior **modularidade** e o uo de **carregamento assíncrono** com `loadComponent`
+- Permite maior **modularidade** e o uso de **carregamento assíncrono** com `loadComponent`
 - Reduz a dependência do `NgModule`, deixando a estrutura mais enxuta
 - Facilita a **organização** e **escalabilidade** do código
 - Melhora a **performance** na inicialização da aplicação
@@ -46,9 +46,9 @@ Este projeto é uma mistura de **vitrine prática** e **trilha de aprendizado pe
 
 ---
 
-**Eng. Magno F. Nóbrega** 
-*Engenheiro de Software* 
-Brasil | Fullstack em formação | Explorador de tecnologias modernas 
-[magnofnobrega@outlook.com](mailto:magnofnobrega@outlook.com) 
-[LinedIn](https://linkedin.com/in/magnofnobrega) 
-[GitHub](https://github.com/magnofnobrega)
+**Eng. Magno F. Nóbrega**  
+*Engenheiro de Software*  
+Brasil | Fullstack em formação | Explorador de tecnologias modernas  
+[magnofnobrega@outlook.com](mailto:magnofnobrega@outlook.com)  
+[LinedIn](https://linkedin.com/in/magnofnobrega)  
+[GitHub](https://github.com/magnofnobrega)  
