@@ -46,6 +46,18 @@ Este projeto é uma mistura de **vitrine prática** e **trilha de aprendizado pe
 
 ---
 
+## Créditos e Atribuições
+
+### Design da Pokédex
+
+As imagens utilizada no layout da Pokédex foram retiradas do projeto **Pokedex** criado por **[Gustavo da Silva Rodrigues](https://www.figma.com/@gustavrd)**, disponível em:  
+
+[Link para o projeto no Figma](https://www.figma.com/community/file/1322325075311624960/pokedex)  
+
+Licenciado ob a [Creative Common Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).  
+
+---
+
 **Eng. Magno F. Nóbrega**  
 *Engenheiro de Software*  
 Brasil | Fullstack em formação | Explorador de tecnologias modernas  
