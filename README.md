@@ -50,5 +50,5 @@ Este projeto é uma mistura de **vitrine prática** e **trilha de aprendizado pe
 *Engenheiro de Software*  
 Brasil | Fullstack em formação | Explorador de tecnologias modernas  
 [magnofnobrega@outlook.com](mailto:magnofnobrega@outlook.com)  
-[LinkedIn](https://linkedin.com/in/magnofnobrega)  
-[GitHub](https://github.com/magnofnobrega)  
+[LinkedIn/in/magnofnobrega](https://linkedin.com/in/magnofnobrega)  
+[GitHub.com/magnofnobrega](https://github.com/magnofnobrega)  
