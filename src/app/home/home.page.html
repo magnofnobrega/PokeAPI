@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pokémon API BSN
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="pokemon.name">
+    <h2>{{ pokemon.name | titlecase }}</h2>
+    <img [src]="pokemon.image" alt="Imagem do Pokémon">
+  </div>
+</ion-content>
