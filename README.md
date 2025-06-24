@@ -28,7 +28,7 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 
 ---
 
-## Etapa 3: Integração do Layout Visual e Renderização do Pokémon
+## Integração do Layout Visual e Renderização do Pokémon
 
 Avançmos com a integração visual da Pokédex clássica ao projeto. Essa etapa envolveu a inserção do layout gráfico inspirado no Pokédex original, o posicionamento do diplay e a renderização da imagem do Pokémon.
 
