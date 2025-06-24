@@ -24,6 +24,26 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 
 1. Criação do projeto standalone com Angular + Ionic
 2. Consumo da API para buscar um Pokémon fixo
+3. Integração do payout viual da Pokédex com a imagem do pokémon
+
+---
+
+## Etapa 3: Integração do Layout Visual e Renderização do Pokémon
+
+Avançmos com a integração visual da Pokédex clássica ao projeto. Essa etapa envolveu a inserção do layout gráfico inspirado no Pokédex original, o posicionamento do diplay e a renderização da imagem do Pokémon.
+
+**Detalhes implementados**
+
+- Layout da Pokédex adicionado com uso da imagem SVG responsiva.
+- Criação de container centralizado para exibir o Pokémon.
+- Poicionamento aboluto e etilização do diplay da Pokédex.
+- Renderização da imagem do Pokémon (Mewtwo) com ajuste de escala e preservação da qualidade visual.
+
+## Interface Atual
+
+Abaixo está uma prévia do layout implementado com o Pokémon exibido corretamente:
+
+![Layout da Pokédex](./src/assets/layout_pokedex.png)
 
 ---
 
