@@ -6,9 +6,19 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- 
 <ion-content class="ion-padding">
   <div *ngIf="pokemon.name">
     <h2>{{ pokemon.name | titlecase }}</h2>
     <img [src]="pokemon.image" alt="Imagem do Pokémon">
+  </div>
+</ion-content> 
+-->
+
+<ion-content>
+  <div class="pokedex-container">
+    <div class="pokemon-display" *ngIf="pokemon.image">
+      <img [src]="pokemon.image" [alt]="pokemon.name"/>
+    </div>
   </div>
 </ion-content>
