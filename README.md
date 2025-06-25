@@ -56,6 +56,12 @@ Abaixo está uma prévia do layout implementado com o Pokémon exibido corretame
 
 A navegação foi construída com a diretiva `*ngSwitchCase`, controlando o conteúdo renderizado com base no índice da página atual. Esse mecanismo garante uma renderização eficiente, estruturada e de fácil manutenção.
 
+## Interface com Paginação
+
+Abaixo está uma demonstração em tempo real da navegação entre páginas da Pokédex:
+
+![Layout da Pokédex](./src/assets/paginacao.gif)
+
 ---
 
 ## Padrão de Projeto Utilizado
