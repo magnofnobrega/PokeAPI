@@ -25,6 +25,7 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 1. Criação do projeto standalone com Angular + Ionic
 2. Consumo da API para buscar um Pokémon fixo
 3. Integração do payout viual da Pokédex com a imagem do pokémon
+4. Implementação da navegação entre seções: nome, altura/peso/habilidades e status 
 
 ---
 
@@ -44,6 +45,16 @@ Avançmos com a integração visual da Pokédex clássica ao projeto. Essa etapa
 Abaixo está uma prévia do layout implementado com o Pokémon exibido corretamente:
 
 ![Layout da Pokédex](./src/assets/layout_pokedex.png)
+
+---
+
+## Paginação de Dados do Pokémon
+
+- **Página 1:** Nome do Pokémon (formatação em caixa alta).
+- **Página 2:** Altura, peso e habilidades exibidas de forma clara e alinhada.
+- **Página 3:** **Status Base** do Pokémon (HP, Ataque, Defesa, etc.), organizados em duas colunas, melhorando a visualização e respeitando o estilo das Pokédex clássicas.
+
+A navegação foi construída com a diretiva `*ngSwitchCase`, controlando o conteúdo renderizado com base no índice da página atual. Esse mecanismo garante uma renderização eficiente, estruturada e de fácil manutenção.
 
 ---
 
