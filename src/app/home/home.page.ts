@@ -38,8 +38,14 @@ export class HomePage implements OnInit {
         name: data.name,
         image: data.sprites.front_default,
         tipo1: this.traduzirTipo(tipos[0] || ''),
-        tipo2: this.traduzirTipo(tipos[1] || '')
+        tipo2: this.traduzirTipo(tipos[1] || ''),
+        geracaoResumida: ''
       };
+
+      this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${data.id}`).subscribe((species: any) => {
+        const nomeGeracao = species.generation.name;
+        this.pokemon.geracaoResumida = this.converterParaResumo(nomeGeracao);
+      })
 
       const traduzirStatus = (nome: string): string => {
         const mapa: { [key: string]: string } = {
@@ -55,7 +61,7 @@ export class HomePage implements OnInit {
 
       this.paginas = [
         {label: 'Nome', value: data.name },
-        {label: 'Altura', value: `${data.height / 10}m` },
+        {label: 'Altura', value: this.formatarAltura(data.height / 10) },
         {label: 'Peso', value: `${data.weight / 10}kg` },
         {label: 'Habilidades', value: data.abilities.map((a: any) => a.ability.name).join(', ') },
         {label: 'Status', 
@@ -134,5 +140,36 @@ export class HomePage implements OnInit {
       .subscribe(data => {
         this.totalPokemons = data.count;
       });
+  }
+
+  converterParaResumo(nomeApi: string): number | string {
+    const mapa: { [key: string]: number } = {
+      'generation-i': 1,
+      'generation-ii': 2,
+      'generation-iii': 3,
+      'generation-iv': 4,
+      'generation-v': 5,
+      'generation-vi': 6,
+      'generation-vii': 7,
+      'generation-viii': 8,
+      'generation-ix': 9
+    };
+    return mapa[nomeApi] || '?';
+  };
+
+  formatarAltura(alturaEmMetros: number): string {
+    if (alturaEmMetros < 1) {
+      const alturaCm = Math.round(alturaEmMetros * 100);
+      return `${alturaCm}cm`;
+    } else {
+      return `${alturaEmMetros.toFixed(2)}m`;
+    }
+  }
+
+  buscarPorId(event: any) {
+    const novoId = Number(event.target.value);
+    if (!isNaN(novoId) && novoId >= 1 && novoId <= this.totalPokemons) {
+      this.getPokemon(novoId);
+    }
   }
 }

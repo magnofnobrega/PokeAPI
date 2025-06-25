@@ -18,9 +18,21 @@
         <ng-container [ngSwitch]="indicePaginaAtual">
 
           <ng-container *ngSwitchCase="0">
-            <p class="nome-estilo">
+            <p class="nome-estilo crt-glow">
             {{ pokemon.name.toUpperCase() }}
             </p>
+            <!--
+            <div class="numero">
+              Nº {{ pokemonId }}
+            </div>
+            -->
+            <div class="numero">
+              Nº 
+              <input type="number" [value]="pokemonId" (change)="buscarPorId($event)" min="1" [max]="totalPokemons">
+            </div>
+            <div class="geracao">
+              Ger. {{ pokemon.geracaoResumida }}
+            </div>
           </ng-container>
           
           <ng-container *ngSwitchCase="1">
