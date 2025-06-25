@@ -27,6 +27,15 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 3. Integração do payout viual da Pokédex com a imagem do pokémon
 4. Implementação da navegação entre seções: nome, altura/peso/habilidades e status
 5. Adição de botões verticais para navegação sequencial entre os Pokémons via ID 
+6. Implementação de numeração dinâmica com campo de busca, exibição da geração do Pokémon e efeito visuais retrô no display principal
+
+---
+
+## Interface Atual
+
+Abaixo está uma prévia do layout atualizado:
+
+![Layout da Pokédex](./src/assets/pokedexAtual.png)
 
 ---
 
@@ -41,7 +50,7 @@ Avançmos com a integração visual da Pokédex clássica ao projeto. Essa etapa
 - Poicionamento aboluto e etilização do diplay da Pokédex.
 - Renderização da imagem do Pokémon (Mewtwo) com ajuste de escala e preservação da qualidade visual.
 
-## Interface Atual
+## Interface Inicial
 
 Abaixo está uma prévia do layout implementado com o Pokémon exibido corretamente:
 
@@ -78,6 +87,20 @@ Essa funcionalidade permite que o usuário avance (&#9660;) ou retorne (&#9650;)
  - Reutilização da lógica de exibição mantendo a consistência com as demais seções da Pokédex
  - O total de Pokémons disponiveis é obtido dinamicamente a partir do endpoint `https://pokeapi.co/api/v2/pokemon?limit=1`, capturando o valor da propriedade `count` e armazenado na variável `totalPokemons`
  -  A navegação agora respeita dinamicamente esse limite superior (`totalPokemons`), garantindo que a aplicação continue funcional mesmo após futuras atualizações da PokéAPI, aumentando a resiliência e reduzindo a necessidade de manutenção manual
+
+---
+
+## Campo Numérico e Geração
+
+Como parte da evolução da Pokédex, foi criada uma seção focada em acesso direto, clareza informativa e imersão visual, com destaque para geração do Pokémon e input de busca rápida.
+
+- Campo numérico de busca rápida permite que o usuário digite o número (ID) de qualuqer pokémon para acessá-lo instantaneamente, otimizando a navegação e reduzindo o número de cliques
+
+- Exibição da geração, exibe a geração do pokémon de forma clara e resumida, no formato Ger.1, Ger. 2, etc. A informação é obtida por meio da API `pokemon-species` e apreentada ao lado do nome do pokémon no diplay principal
+
+- Conversão automática é uma resposta textual da API (`generation-i`, `generation-ii`, etc.) convertido automaticamente para um número legivel pelo uuario por meio de um mapeamento interno, mantendo a apresentação simp;les e conistente
+
+- Validação de input, o campo numérico não aceita valore fora do intervalo válido(entre 1 e o total de pokémons disponiveis na API), garantindo robustez e evitando falhas ou resultados inválidos.
 
 ---
 
