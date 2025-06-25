@@ -25,7 +25,8 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 1. Criação do projeto standalone com Angular + Ionic
 2. Consumo da API para buscar um Pokémon fixo
 3. Integração do payout viual da Pokédex com a imagem do pokémon
-4. Implementação da navegação entre seções: nome, altura/peso/habilidades e status 
+4. Implementação da navegação entre seções: nome, altura/peso/habilidades e status
+5. Adição de botões verticais para navegação sequencial entre os Pokémons via ID 
 
 ---
 
@@ -61,6 +62,22 @@ A navegação foi construída com a diretiva `*ngSwitchCase`, controlando o cont
 Abaixo está uma demonstração em tempo real da navegação entre páginas da Pokédex:
 
 ![Layout da Pokédex](./src/assets/paginacao.gif)
+
+---
+
+## Navegação Sequencial entre Pokémons
+
+Como parte do aprimoramento da experiência de usuário e da simulação da navegação de uma Pokédex clássica, foi implementado um sistema de **navegação vertical sequencial** que percorre os registros da [PokéAPI](https://pokeapi.co) de forma incremental.
+
+Essa funcionalidade permite que o usuário avance (&#9660;) ou retorne (&#9650;) entre os Pokémons utilizandfo os botões direcionais, atualizando dinamicamente as informações exibidas com base no ID atual do pokémon.
+
+**Detalhes implementados:**
+
+ - Controle de ID do Pokémon através de uma variável `pokemonID`, iniciando em 1 (Bulbasaur)
+ - Botões (&#9660;) e (&#9650;) atualizam o pokemonId e disparam a função `getPokemon()` para buscar os dados atualizados 
+ - Reutilização da lógica de exibição mantendo a consistência com as demais seções da Pokédex
+ - O total de Pokémons disponiveis é obtido dinamicamente a partir do endpoint `https://pokeapi.co/api/v2/pokemon?limit=1`, capturando o valor da propriedade `count` e armazenado na variável `totalPokemons`
+ -  A navegação agora respeita dinamicamente esse limite superior (`totalPokemons`), garantindo que a aplicação continue funcional mesmo após futuras atualizações da PokéAPI, aumentando a resiliência e reduzindo a necessidade de manutenção manual
 
 ---
 
