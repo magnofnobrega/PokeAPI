@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePage implements OnInit {
   pokemon: any = {};
+  pokemonId: number = 1;
+  totalPokemons: number = 1010;
 
   paginas: { label: string, value: string }[] = [];
   paginaAtual: { label: string, value: string } | null = null;
@@ -21,12 +23,15 @@ export class HomePage implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getPokemon('mewtwo');
+    this.getTotalPokemons();
+    this.getPokemon(this.pokemonId);
   }
 
-  getPokemon(name: string) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+  getPokemon(idOuNome: number | string) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${idOuNome}`;
     this.http.get(url).subscribe((data: any) => {
+      this.pokemonId = data.id;
+
       const tipos = data.types.map((t:any) => t.type.name);
 
       this.pokemon = {
@@ -110,5 +115,24 @@ export class HomePage implements OnInit {
 
   isStatusArray(value: any): value is { nome: string; valor: number }[] {
     return Array.isArray(value);
+  }
+
+  proximoPokemon() {
+    if (this.pokemonId < this.totalPokemons) {
+      this.getPokemon(this.pokemonId + 1)
+    }
+  }
+
+  pokemonAnterior() {
+    if (this.pokemonId > 1) {
+      this.getPokemon(this.pokemonId - 1);
+    }
+  }
+
+  getTotalPokemons() {
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?limit=1')
+      .subscribe(data => {
+        this.totalPokemons = data.count;
+      });
   }
 }

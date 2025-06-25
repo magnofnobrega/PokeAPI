@@ -54,6 +54,10 @@
       <button (click)="anterior()">&#9664;&nbsp;</button>
       <button (click)="proxima()">&nbsp;&#9654;</button>
     </div>
+    <div class="dpad-vert">
+      <button (click)="pokemonAnterior()">&#9650;</button>
+      <button (click)="proximoPokemon()">&#9660;</button>
+    </div>
 
     <div>
       <div class="pokemon-tipos" *ngIf="pokemon.tipo1 || pokemon.tipo2">

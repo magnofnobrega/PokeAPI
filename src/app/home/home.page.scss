@@ -40,7 +40,7 @@
 
 .pokemon-display {
   position: absolute;
-  top: 170px;
+  top: 160px;
   left: 100px;
   width: 150px;
   height: auto;
@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-.pokemon-display img {
+.pokemon-display img {  
   max-width: 100%;
   max-height: 100%;
   width: 300px;
@@ -110,6 +110,38 @@
 }
 
 .dpad button:hover {
+  transform: scale(1.1);
+}
+
+.dpad-vert {
+  position: absolute;
+  font-size: 15px;
+  border-radius: 2px;
+  background-color: #313131;
+  top: 73.5%;
+  left: 38.5%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dpad-vert button {
+  width: 20px;
+  height: 25px;
+  min-width: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 17px;
+  border-radius: 2px;
+  background-color: #313131;
+  cursor: pointer;
+}
+
+.dpad-vert button:hover {
   transform: scale(1.1);
 }
 
