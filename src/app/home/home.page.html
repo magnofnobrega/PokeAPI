@@ -6,19 +6,61 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- 
-<ion-content class="ion-padding">
-  <div *ngIf="pokemon.name">
-    <h2>{{ pokemon.name | titlecase }}</h2>
-    <img [src]="pokemon.image" alt="Imagem do Pokémon">
-  </div>
-</ion-content> 
--->
-
 <ion-content>
   <div class="pokedex-container">
     <div class="pokemon-display" *ngIf="pokemon.image">
       <img [src]="pokemon.image" [alt]="pokemon.name"/>
     </div>
+
+    <div class="pokemon-info">
+      <div *ngIf="paginaAtual">
+
+        <ng-container [ngSwitch]="indicePaginaAtual">
+
+          <ng-container *ngSwitchCase="0">
+            <p class="nome-estilo">
+            {{ pokemon.name.toUpperCase() }}
+            </p>
+          </ng-container>
+          
+          <ng-container *ngSwitchCase="1">
+            <div class="altura-peso-linha">
+              <span>Altura: {{ paginas[1].value }} </span>
+              <span>Peso: {{ paginas[2].value }} </span>
+            </div>
+            
+            <p class="habilidades-linha">
+              Habilidades: {{ paginas[3].value }}
+            </p>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="2">
+              <div class="bloco-status">
+                <p>Status:</p>
+                <div class="grade-status" *ngIf="isStatusArray(paginas[4].value)">
+                  <div class="status-item" *ngFor="let stat of paginas[4].value">
+                    <span>{{ stat.nome }}: {{ stat.valor }}</span>  
+                  </div>
+                </div>
+              </div>
+          </ng-container>
+
+        </ng-container>
+      
+      </div>
+    </div> 
+      
+    <div class="dpad">
+      <button (click)="anterior()">&#9664;&nbsp;</button>
+      <button (click)="proxima()">&nbsp;&#9654;</button>
+    </div>
+
+    <div>
+      <div class="pokemon-tipos" *ngIf="pokemon.tipo1 || pokemon.tipo2">
+        <p class="tipo1"> {{ pokemon.tipo1 }} </p>
+        <p class="tipo2"> {{ pokemon.tipo2 }} </p>
+      </div>
+    </div>
+
   </div>
 </ion-content>
