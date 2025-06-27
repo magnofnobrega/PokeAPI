@@ -293,11 +293,35 @@
   color: #00f0ff;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   top: 80%;
-  left: 79%;
+  left: 76%;
   text-shadow: 
     0 0 1px #00f0ff,
     0 0 10px #00f0ff,
     0 0 20px #00f0ff,
     0 0 30px #00f0ff,
     0 0 35px #00f0ff;
+}
+
+.geracao input {
+  background-color: black;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  text-align: left;
+  color: #00f0ff;
+  width: 20px;
+  text-shadow: 
+    0 0 1px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 30px #00f0ff;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: textfield;
+}
+
+.geracao input::-webkit-inner-spin-button,
+.geracao input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

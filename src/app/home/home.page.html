@@ -31,7 +31,11 @@
               <input type="number" [value]="pokemonId" (change)="buscarPorId($event)" min="1" [max]="totalPokemons">
             </div>
             <div class="geracao">
+              <!--
               Ger. {{ pokemon.geracaoResumida }}
+              -->
+              Ger.
+              <input type="number" [value]="geracaoAtual" (change)="buscarPorGeracao($event)" min="1" max="9">
             </div>
           </ng-container>
           

@@ -15,6 +15,7 @@ export class HomePage implements OnInit {
   pokemon: any = {};
   pokemonId: number = 1;
   totalPokemons: number = 1010;
+  geracaoAtual: number = 1;
 
   paginas: { label: string, value: string }[] = [];
   paginaAtual: { label: string, value: string } | null = null;
@@ -44,8 +45,11 @@ export class HomePage implements OnInit {
 
       this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${data.id}`).subscribe((species: any) => {
         const nomeGeracao = species.generation.name;
-        this.pokemon.geracaoResumida = this.converterParaResumo(nomeGeracao);
-      })
+        const numeroGeracao = this.converterParaResumo(nomeGeracao);
+        //this.pokemon.geracaoResumida = this.converterParaResumo(nomeGeracao);
+        this.pokemon.geracaoResumida = numeroGeracao;
+        this.geracaoAtual = Number(numeroGeracao);
+      });
 
       const traduzirStatus = (nome: string): string => {
         const mapa: { [key: string]: string } = {
@@ -171,5 +175,32 @@ export class HomePage implements OnInit {
     if (!isNaN(novoId) && novoId >= 1 && novoId <= this.totalPokemons) {
       this.getPokemon(novoId);
     }
+  }
+
+  buscarPorGeracao(event: any) {
+    const geracao = Number(event.target.value);
+    const mapaGeracoes: { [key: number]: string} = {
+      1: 'generation-i',
+      2: 'generation-ii',
+      3: 'generation-iii',
+      4: 'generation-iv',
+      5: 'generation-v',
+      6: 'generation-vi',
+      7: 'generation-vii',
+      8: 'generation-viii',
+      9: 'generation-ix'
+    };
+
+    const nomeGeracao = mapaGeracoes[geracao];
+    if (!nomeGeracao) return;
+
+    this.geracaoAtual = geracao;
+
+    this.http.get<any>(`https://pokeapi.co/api/v2/generation/${nomeGeracao}`).subscribe(data => {
+      const nomes = data.pokemon_species.map((p: any) => p.name);
+      nomes.sort();
+      const primeiroNome = nomes[0];
+      this.getPokemon(primeiroNome);
+    });
   }
 }
