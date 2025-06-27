@@ -28,6 +28,7 @@ O projeto está em desenvolvimento e passou pelas seguintes etapas:
 4. Implementação da navegação entre seções: nome, altura/peso/habilidades e status
 5. Adição de botões verticais para navegação sequencial entre os Pokémons via ID 
 6. Implementação de numeração dinâmica com campo de busca, exibição da geração do Pokémon e efeito visuais retrô no display principal
+7. Implementação do filtro por geração, permitindo seleção e exibição de Pokémon por geração
 
 ---
 
